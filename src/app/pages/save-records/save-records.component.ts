@@ -41,10 +41,8 @@ export class SaveRecordsComponent implements OnInit {
 
   saveRecord(imageElement: any) {
     if (this.picVid) {
-      let fileName = uuidv4();
       let imgData = this.filesService.getBase64Image(imageElement);
-      localStorage.setItem(fileName, imgData);
-      this.record.picVid = fileName;
+      this.record.picVid = imgData;
     }
 
     switch (this.type) {
@@ -53,6 +51,7 @@ export class SaveRecordsComponent implements OnInit {
         this.recordsService.addRunRecord(this.record);
         break;
       case 'Jump':
+        console.log('saving');
         this.recordsService.addJumpRecord(this.record);
         break;
       case 'Throw':

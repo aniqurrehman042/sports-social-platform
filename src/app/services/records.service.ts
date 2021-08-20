@@ -14,6 +14,9 @@ export class RecordsService {
   wtLiftRecords: SportsRecord[] = [];
 
   getRunRecords(): SportsRecord[] {
+    if (this.runRecords.length > 0) {
+      return this.runRecords;
+    }
     let localRunRecords = localStorage.getItem('runRecords');
     if (localRunRecords) {
       this.runRecords = JSON.parse(localRunRecords);
@@ -22,73 +25,112 @@ export class RecordsService {
   }
 
   getJumpRecords(): SportsRecord[] {
-    let localRunRecords = localStorage.getItem('jumpRecords');
-    if (localRunRecords) {
-      this.jumpRecords = JSON.parse(localRunRecords);
+    if (this.jumpRecords.length > 0) {
+      return this.jumpRecords;
+    }
+    let localJumpRecords = localStorage.getItem('jumpRecords');
+    if (localJumpRecords) {
+      this.jumpRecords = JSON.parse(localJumpRecords);
     }
     return this.jumpRecords
   }
 
   getThrowRecords(): SportsRecord[] {
-    let localRunRecords = localStorage.getItem('throwRecords');
-    if (localRunRecords) {
-      this.throwRecords = JSON.parse(localRunRecords);
+    if (this.throwRecords.length > 0) {
+      return this.throwRecords;
+    }
+    let localThrowRecords = localStorage.getItem('throwRecords');
+    if (localThrowRecords) {
+      this.throwRecords = JSON.parse(localThrowRecords);
     }
     return this.throwRecords
   }
 
   getWalkRecords(): SportsRecord[] {
-    let localRunRecords = localStorage.getItem('walkRecords');
-    if (localRunRecords) {
-      this.walkRecords = JSON.parse(localRunRecords);
+    if (this.walkRecords.length > 0) {
+      return this.walkRecords;
+    }
+    let localWalkRecords = localStorage.getItem('walkRecords');
+    if (localWalkRecords) {
+      this.walkRecords = JSON.parse(localWalkRecords);
     }
     return this.walkRecords
   }
 
   getSwimRecords(): SportsRecord[] {
-    let localRunRecords = localStorage.getItem('swimRecords');
-    if (localRunRecords) {
-      this.swimRecords = JSON.parse(localRunRecords);
+    if (this.swimRecords.length > 0) {
+      return this.swimRecords;
+    }
+    let localSwimRecords = localStorage.getItem('swimRecords');
+    if (localSwimRecords) {
+      this.swimRecords = JSON.parse(localSwimRecords);
     }
     return this.swimRecords
   }
 
   getWtLiftRecords(): SportsRecord[] {
-    let localRunRecords = localStorage.getItem('wtLiftRecords');
-    if (localRunRecords) {
-      this.wtLiftRecords = JSON.parse(localRunRecords);
+    if (this.wtLiftRecords.length > 0) {
+      return this.wtLiftRecords;
+    }
+    let localWtLiftRecords = localStorage.getItem('wtLiftRecords');
+    if (localWtLiftRecords) {
+      this.wtLiftRecords = JSON.parse(localWtLiftRecords);
     }
     return this.wtLiftRecords
   }
 
   addRunRecord(record: SportsRecord) {
     this.runRecords.push(record);
-    localStorage.setItem('runRecords', JSON.stringify(this.runRecords));
+    try {
+      localStorage.setItem('runRecords', JSON.stringify(this.runRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addJumpRecord(record: SportsRecord) {
-    this.runRecords.push(record);
-    localStorage.setItem('jumpRecords', JSON.stringify(this.jumpRecords));
+    this.jumpRecords.push(record);
+    try {
+      localStorage.setItem('jumpRecords', JSON.stringify(this.jumpRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addThrowRecord(record: SportsRecord) {
-    this.runRecords.push(record);
-    localStorage.setItem('throwRecords', JSON.stringify(this.throwRecords));
+    this.throwRecords.push(record);
+    try {
+      localStorage.setItem('throwRecords', JSON.stringify(this.throwRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addWalkRecord(record: SportsRecord) {
-    this.runRecords.push(record);
-    localStorage.setItem('walkRecords', JSON.stringify(this.walkRecords));
+    this.walkRecords.push(record);
+    try {
+      localStorage.setItem('walkRecords', JSON.stringify(this.walkRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addSwimRecord(record: SportsRecord) {
-    this.runRecords.push(record);
-    localStorage.setItem('swimRecords', JSON.stringify(this.swimRecords));
+    this.swimRecords.push(record);
+    try {
+      localStorage.setItem('swimRecords', JSON.stringify(this.swimRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   addWtLiftRecord(record: SportsRecord) {
-    this.runRecords.push(record);
-    localStorage.setItem('wtLiftRecords', JSON.stringify(this.wtLiftRecords));
+    this.wtLiftRecords.push(record);
+    try {
+      localStorage.setItem('wtLiftRecords', JSON.stringify(this.wtLiftRecords));
+    } catch (e) {
+      console.log(e);
+    }
   }
 
   constructor() { }

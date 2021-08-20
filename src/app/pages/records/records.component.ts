@@ -41,11 +41,6 @@ export class RecordsComponent implements OnInit {
           this.records = this.recordsService.getWtLiftRecords();
           break;
       }
-      this.records.forEach((record) => {
-        record.picVid = localStorage.getItem(record.picVid)
-          ? "data:image/png;base64," + localStorage.getItem(record.picVid)
-          : record.picVid;
-      });
     });
   }
 
