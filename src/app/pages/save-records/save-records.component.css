@@ -1,0 +1,23 @@
+.save-record-form {
+    margin-top: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
+    padding-bottom: 2em;
+}
+
+.save-record-form label {
+    padding-top: 1em;
+    padding-bottom: 1em;
+    display: block;
+}
+
+.save-record-form label span {
+    display: block;
+    margin-bottom: 0.5em;
+    font-weight: bold;
+}
+
+.sports-record-media {
+    width: 100px;
+    margin-left: 1em;
+}

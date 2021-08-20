@@ -1,0 +1,24 @@
+<table>
+    <thead>
+        <tr>
+            <th>Date of Event</th>
+            <th>{{ type }}</th>
+            <th>Score</th>
+            <th>Meet</th>
+            <th>Location</th>
+            <th>Comments</th>
+            <th>Pic/Vid</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let record of records">
+            <td>{{ record.date }}</td>
+            <td>{{ record.category }}</td>
+            <td>{{ record.score }}</td>
+            <td>{{ record.meet }}</td>
+            <td>{{ record.location }}</td>
+            <td>{{ record.comments }}</td>
+            <td><img class="record-img" [src]="record.picVid" alt="Sports Record Media"></td>
+        </tr>
+    </tbody>
+</table>

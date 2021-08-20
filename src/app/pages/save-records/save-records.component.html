@@ -1,0 +1,28 @@
+<form class="save-record-form" (ngSubmit)="saveRecord(sportsRecordMedia)">
+    <label for="date">
+        <span>Date</span>
+        <input id="date" name="date" type="date" [(ngModel)]="record.date">
+    </label>
+    <label for="score">
+        <span>Score</span>
+        <input id="score" name="score" type="text" [(ngModel)]="record.score">
+    </label>
+    <label for="meet">
+        <span>Meet</span>
+        <input id="meet" name="meet" type="text" [(ngModel)]="record.meet">
+    </label>
+    <label for="location">
+        <span>Location</span>
+        <input id="location" name="location" type="text" [(ngModel)]="record.location">
+    </label>
+    <label for="comments">
+        <span>Comments</span>
+        <input id="comments" name="comments" type="text" [(ngModel)]="record.comments">
+    </label>
+    <label for="picVid">
+        <span>Pic/Vid</span>
+        <input id="picVid" name="picVid" type="file" [(ngModel)]="picVid" (change)="readUrl(sportsRecordMediaInput, sportsRecordMedia)" #sportsRecordMediaInput>
+        <img class="sports-record-media" src="" #sportsRecordMedia>
+    </label>
+    <button type="submit" class="btn-primary">Save</button>
+</form>
